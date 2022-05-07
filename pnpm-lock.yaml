@@ -65,7 +65,10 @@ importers:
       vue-eslint-parser: 8.3.0_eslint@8.14.0
 
   packages/web:
-    specifiers: {}
+    specifiers:
+      shx: ^0.3.4
+    devDependencies:
+      shx: 0.3.4
 
 packages:
 
