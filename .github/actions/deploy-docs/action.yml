@@ -24,7 +24,7 @@ runs:
       shell: bash
 
     - name: log
-      run: echo '${{ hashFiles(inputs.publish_dir) }}'
+      run: echo '${{ toJSON(inputs) }}'
       shell: bash
 
     - name: Run Deploy
