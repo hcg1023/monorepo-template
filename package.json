@@ -1,0 +1,78 @@
+{
+  "name": "root",
+  "version": "0.0.0",
+  "description": "monorepo template",
+  "scripts": {
+	"preinstall": "npx only-allow pnpm",
+	"test": "vitest --run",
+	"lint": "eslint packages --ext .js,.ts,.vue --fix",
+	"prettier": "prettier --write packages/**/*.{js,ts,jsx,tsx,vue}",
+	"prepare": "husky install",
+	"lint-staged": "lint-staged",
+	"pack-version": "changeset version",
+	"release": "pnpm -r publish && changeset tag",
+	"prepublishOnly": "pnpm run version",
+	"commitlint": "commitlint -e -V"
+  },
+  "author": "hcg1023 <2293885211@qq.com>",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    "import": "./dist/esm/index.js",
+    "require": "./dist/cjs/index.js",
+    "types": "./dist/types/index.d.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hcg1023/vue3-dnd"
+  },
+  "homepage": "https://hcg1023.github.io/vue3-dnd/",
+  "bugs": "https://github.com/hcg1023/vue3-dnd/issues",
+  "license": "MIT",
+  "keywords": [
+    "drag",
+    "drop",
+    "dnd",
+    "vue",
+    "vuejs",
+    "vue3",
+    "composition-api",
+    "react-dnd",
+    "draggable",
+    "droppable",
+    "drag-and-drop"
+  ],
+  "devDependencies": {
+	"@commitlint/cli": "^16.2.1",
+	"@commitlint/config-conventional": "^16.2.1",
+    "@changesets/cli": "^2.22.0",
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.5.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.5",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.5.1",
+    "shx": "^0.3.4",
+    "standard-version": "^9.3.2",
+    "stylelint": "^14.5.3",
+    "typescript": "^4.5.4",
+    "vitest": "^0.6.0",
+    "vue-eslint-parser": "^8.3.0"
+  },
+  "lint-staged": {
+	"*.{js,js,ts,tsx,vue}": [
+	  "eslint --fix",
+	  "prettier --write",
+	  "vitest related --run"
+	],
+	"*.{less,css}": [
+	  "stylelint --fix"
+	]
+  }
+}
