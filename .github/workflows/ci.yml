@@ -16,7 +16,8 @@ jobs: # 工作流
     steps:
       - uses: actions/checkout@v2
 
-      - uses: ./.github/actions/pnpm
+      - name: Install pnpm
+        uses: .github/actions/pnpm
 
       - name: Run Lint
         run: pnpm run lint

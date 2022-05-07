@@ -21,7 +21,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      - uses: ./.github/actions/pnpm
+      - uses: .github/actions/pnpm
 
       - name: Create Release Pull Request or Publish to npm
         # https://github.com/changesets/action
