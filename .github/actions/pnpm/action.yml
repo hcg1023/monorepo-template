@@ -13,6 +13,9 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    - run: echo '${{ toJSON(inputs) }}'
+      shell: bash
+
     - name: Install pnpm
       uses: pnpm/action-setup@v2.0.1
       with:
