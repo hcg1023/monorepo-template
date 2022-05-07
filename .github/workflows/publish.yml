@@ -45,8 +45,8 @@ jobs:
         if: ${{ steps.changesets.outputs.published == 'true' }}
         run: pnpm run publish-success
 
-      - name: Deploy to GitHub Pages # 发布成功以后自动部署到 GitHub Pages
-        if: ${{ steps.changesets.outputs.published == 'true' }}
+      - name: Deploy to GitHub Pages # 发布成功以后自动部署到 GitHub Pages,或者发布了但是没有更改的时候(这种情况published为false)
+        if: ${{ steps.changesets.outputs.published == 'true' || steps.changesets.outputs.hasChangesets == 'false' }}
         uses: ./.github/actions/deploy-docs
         with:
           build: BASE_URL=$BASE_URL pnpm -r build --filter=$BUILD_PACKAGE_NAME
