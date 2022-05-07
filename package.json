@@ -7,21 +7,15 @@
     "prepare": "husky install",
     "test": "vitest --run --passWithNoTests",
     "lint": "eslint packages --quiet --ext .js,.ts,.vue --fix --no-error-on-unmatched-pattern",
+    "lint:style": "stylelint \"packages/**/*.{less,css,vue}\" --fix --allow-empty-input",
     "prettier": "prettier --write packages/**/*.{js,ts,jsx,tsx,vue} --no-error-on-unmatched-pattern",
     "lint-staged": "lint-staged",
+    "commitlint": "commitlint -e -V",
     "pack-version": "changeset version",
-    "release": "git status && pnpm -r publish && changeset tag",
-    "commitlint": "commitlint -e -V"
+    "release": "pnpm -r publish && changeset tag",
+    "publish-success": "echo \"publish success\""
   },
   "author": "hcg1023 <2293885211@qq.com>",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/types/index.d.ts",
-  "exports": {
-    "import": "./dist/esm/index.js",
-    "require": "./dist/cjs/index.js",
-    "types": "./dist/types/index.d.ts"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/hcg1023/monorepo-template"
@@ -45,10 +39,18 @@
     "jsdom": "^19.0.0",
     "lint-staged": "^12.3.5",
     "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.13",
+    "postcss-html": "^1.4.1",
+    "postcss-less": "^6.0.0",
     "prettier": "^2.5.1",
     "shx": "^0.3.4",
     "standard-version": "^9.3.2",
     "stylelint": "^14.5.3",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-less": "^1.0.5",
+    "stylelint-order": "^5.0.0",
     "typescript": "^4.5.4",
     "vitest": "^0.6.0",
     "vue-eslint-parser": "^8.3.0"
@@ -59,7 +61,7 @@
       "prettier --write",
       "vitest related --run"
     ],
-    "*.{less,css}": [
+    "*.{less,css,vue}": [
       "stylelint --fix"
     ]
   }

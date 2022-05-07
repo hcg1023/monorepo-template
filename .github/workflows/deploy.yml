@@ -2,8 +2,8 @@ name: deploy
 
 env:
   BASE_URL: /monorepo-template
-  BUILD_DIR: "docs"
-  PUBLISH_DIR: ./packages/docs/dist
+  BUILD_PACKAGE_NAME: "web"
+  PUBLISH_DIR: ./packages/web/dist
 
 # 手动触发，不需要自动部署
 # 自动部署的时机是在publish之后
@@ -20,6 +20,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: ./.github/actions/deploy-docs
         with:
-          build: BASE_URL=$BASE_URL pnpm -r build --filter=$BUILD_DIR
+          build: BASE_URL=$BASE_URL pnpm -r build --filter=$BUILD_PACKAGE_NAME
           publish_dir: $PUBLISH_DIR
           github_token: ${{ secrets.GITHUB_TOKEN }}
