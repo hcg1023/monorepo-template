@@ -29,6 +29,7 @@ jobs:
       - uses: ./.github/actions/pnpm
 
       - name: Create Release Pull Request or Publish to npm
+        id: changesets
         # https://github.com/changesets/action
         uses: changesets/action@v1
         with:
