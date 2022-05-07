@@ -32,7 +32,7 @@ jobs: # 工作流
         run: pnpm run lint
 
       - name: Run Stylelint
-        run: pnpm run lint:style
+        run: pnpm run stylelint
 
       - name: Run Prettier
         run: pnpm run prettier
