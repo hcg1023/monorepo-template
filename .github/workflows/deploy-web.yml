@@ -23,5 +23,5 @@ jobs:
         uses: ./.github/actions/deploy-docs
         with:
           build: BASE_URL=${{ env.BASE_URL }} pnpm -r build --filter=${{ env.BUILD_PACKAGE_NAME }}
-          publish_dir: $PUBLISH_DIR
+          publish_dir: ${{ env.PUBLISH_DIR }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
