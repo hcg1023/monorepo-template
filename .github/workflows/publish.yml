@@ -40,11 +40,11 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Post Publish to npm # 发布成功后，可以执行一些事情
-        if: steps.changesets.outputs.published == 'true'
+        if: ${{ steps.changesets.outputs.published == 'true' }}
         run: pnpm run publish-success
 
       - name: Deploy to GitHub Pages # 发布成功以后自动部署到 GitHub Pages
-        if: steps.changesets.outputs.published == 'true'
+        if: ${{ steps.changesets.outputs.published == 'true' }}
         uses: ./.github/actions/deploy-docs
         with:
           build: BASE_URL=$BASE_URL pnpm -r build --filter=$BUILD_PACKAGE_NAME
