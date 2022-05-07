@@ -41,6 +41,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: log changesets outputs
+        run: echo ${{ toJSON(steps.changesets.outputs) }}
+
       - name: Post Publish to npm # 发布成功后，可以执行一些事情
         if: ${{ steps.changesets.outputs.published == 'true' }}
         run: pnpm run publish-success
