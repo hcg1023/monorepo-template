@@ -34,5 +34,8 @@ jobs: # 工作流
       - name: Run Prettier
         run: pnpm run prettier
 
+      - name: Run Test
+        run: pnpm run test
+
       - name: Run Build
         run: pnpm -r build
