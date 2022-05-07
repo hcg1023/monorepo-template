@@ -14,13 +14,13 @@ runs:
   using: 'composite'
   steps:
     - name: Install pnpm
-        uses: pnpm/action-setup@v2.0.1
-        with:
-          version: ${{ inputs.version }}
+      uses: pnpm/action-setup@v2.0.1
+      with:
+        version: ${{ inputs.version }}
 
     - name: setup pnpm config
-        run: pnpm config set store-dir ${{ inputs.cache }}
-        shell: bash
+      run: pnpm config set store-dir ${{ inputs.cache }}
+      shell: bash
 
     - name: Set node version to 16
       uses: actions/setup-node@v2
