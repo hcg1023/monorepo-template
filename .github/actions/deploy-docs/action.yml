@@ -23,6 +23,10 @@ runs:
       run: ${{ inputs.build }}
       shell: bash
 
+    - name: log
+      run: echo '${{ hashFiles(inputs.publish_dir) }}'
+      shell: bash
+
     - name: Run Deploy
       uses: peaceiris/actions-gh-pages@v3
       if: ${{ hashFiles(inputs.publish_dir) }}

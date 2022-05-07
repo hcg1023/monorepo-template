@@ -7,7 +7,18 @@
 
 4. 非特殊情况不要在main分支开发，而是通过feature分支pull request合并到main分支
 5. 在github apps仓库中安装changeset-bot，并使它对当前仓库生效
+6. 使用github actions自动部署gh-pages，需要检查`.github/workflows/deploy.yml`和`.github/workflows/publish.yml`中的环境变量，是否是指定的项目
+7. 如果需要npm功能，请在仓库的设置`settings/Secrets/Actions`中添加NPM_TOKEN，点击`New repository secret`按钮添加即可
 
+## 工作流
+1. 使用feature分支开发
+2. 提交pull request到main分支
+3. 合并pull request到main分支
+4. 此时changesets-bot会创建一个**Release From Changeset**的pull request
+5. 如果需要继续开发，请继续其他的开发，重复1-3步骤
+6. 开发完成，需要发布npm，就将**Release From Changeset**的pull request合并到main分支
+7. 此时会自动发布到npm以及gh-pages
+8. 如果在其它时间想要发布gh-pages，可以在Actions中手动点击deploy的run workflow按钮
 
 ## package.json命令详解
 ### preinstall
