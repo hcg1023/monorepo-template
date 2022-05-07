@@ -3,15 +3,15 @@
   "version": "0.0.0",
   "description": "monorepo template",
   "scripts": {
-	"preinstall": "npx only-allow pnpm",
-	"prepare": "husky install",
-	"test": "vitest --run --passWithNoTests",
-	"lint": "eslint packages --quiet --ext .js,.ts,.vue --fix --no-error-on-unmatched-pattern",
-	"prettier": "prettier --write packages/**/*.{js,ts,jsx,tsx,vue} --no-error-on-unmatched-pattern",
-	"lint-staged": "lint-staged",
-	"pack-version": "changeset version",
-	"release": "git status && pnpm -r publish && changeset tag",
-	"commitlint": "commitlint -e -V"
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky install",
+    "test": "vitest --run --passWithNoTests",
+    "lint": "eslint packages --quiet --ext .js,.ts,.vue --fix --no-error-on-unmatched-pattern",
+    "prettier": "prettier --write packages/**/*.{js,ts,jsx,tsx,vue} --no-error-on-unmatched-pattern",
+    "lint-staged": "lint-staged",
+    "pack-version": "changeset version",
+    "release": "git status && pnpm -r publish && changeset tag",
+    "commitlint": "commitlint -e -V"
   },
   "author": "hcg1023 <2293885211@qq.com>",
   "main": "dist/cjs/index.js",
@@ -24,28 +24,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hcg1023/vue3-dnd"
+    "url": "https://github.com/hcg1023/monorepo-template"
   },
-  "homepage": "https://hcg1023.github.io/vue3-dnd/",
-  "bugs": "https://github.com/hcg1023/vue3-dnd/issues",
+  "homepage": "https://github.com/hcg1023/monorepo-template/",
+  "bugs": "https://github.com/hcg1023/monorepo-template/issues",
   "license": "MIT",
-  "keywords": [
-    "drag",
-    "drop",
-    "dnd",
-    "vue",
-    "vuejs",
-    "vue3",
-    "composition-api",
-    "react-dnd",
-    "draggable",
-    "droppable",
-    "drag-and-drop"
-  ],
+  "keywords": [],
   "devDependencies": {
-	"@commitlint/cli": "^16.2.1",
-	"@commitlint/config-conventional": "^16.2.1",
     "@changesets/cli": "^2.22.0",
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
     "@typescript-eslint/eslint-plugin": "^5.14.0",
     "@typescript-eslint/parser": "^5.14.0",
     "cross-env": "^7.0.3",
@@ -54,6 +42,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.5.0",
     "husky": "^7.0.4",
+    "jsdom": "^19.0.0",
     "lint-staged": "^12.3.5",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1",
@@ -65,13 +54,13 @@
     "vue-eslint-parser": "^8.3.0"
   },
   "lint-staged": {
-	"*.{js,js,ts,tsx,vue}": [
-	  "eslint --fix",
-	  "prettier --write",
-	  "vitest related --run"
-	],
-	"*.{less,css}": [
-	  "stylelint --fix"
-	]
+    "*.{js,js,ts,tsx,vue}": [
+      "eslint --fix",
+      "prettier --write",
+      "vitest related --run"
+    ],
+    "*.{less,css}": [
+      "stylelint --fix"
+    ]
   }
 }
