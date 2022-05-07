@@ -1,4 +1,4 @@
-name: deploy
+name: deploy-web
 
 env:
   BASE_URL: /monorepo-template
@@ -22,6 +22,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: ./.github/actions/deploy-docs
         with:
-          build: BASE_URL=$BASE_URL pnpm -r build --filter=$BUILD_PACKAGE_NAME
+          build: BASE_URL=${{ env.BASE_URL }} pnpm -r build --filter=${{ env.BUILD_PACKAGE_NAME }}
           publish_dir: $PUBLISH_DIR
           github_token: ${{ secrets.GITHUB_TOKEN }}
