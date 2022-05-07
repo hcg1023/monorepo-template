@@ -6,7 +6,7 @@
 	"preinstall": "npx only-allow pnpm",
 	"test": "vitest --run",
 	"lint": "eslint packages --quiet --ext .js,.ts,.vue --fix --no-error-on-unmatched-pattern",
-	"prettier": "prettier --write packages/**/*.{js,ts,jsx,tsx,vue}",
+	"prettier": "prettier --write packages/**/*.{js,ts,jsx,tsx,vue} --no-error-on-unmatched-pattern",
 	"prepare": "husky install",
 	"lint-staged": "lint-staged",
 	"pack-version": "changeset version",
