@@ -1,16 +1,16 @@
 {
   "name": "web",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "description": "",
   "main": "index.js",
   "scripts": {
-	"build": "shx cp -r ./src ./dist",
+    "build": "shx cp -r ./src ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "hcg1023 <2293885211@qq.com>",
   "devDependencies": {
-	"shx": "^0.3.4"
+    "shx": "^0.3.4"
   },
   "keywords": [],
   "license": "ISC"
