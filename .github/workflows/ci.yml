@@ -2,10 +2,14 @@ name: CI
 
 # 在master分支发生push事件时触发。
 on:
+  schedule:
+    - cron: '0 0 * * *'
+
   push:
     branches:
       - main
       - changeset-release/main
+
   pull_request:
     branches:
       - main
