@@ -24,7 +24,7 @@ jobs: # 工作流
           fetch-depth: 0
 
       - name: Install pnpm
-        uses: ./.github/actions/pnpm
+        uses: /.github/actions/pnpm
 
       - name: Run Lint
         run: pnpm run lint
