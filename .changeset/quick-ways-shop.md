@@ -1,5 +1,0 @@
----
-'web': major
----
-
-release web
